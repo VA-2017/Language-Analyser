@@ -22,7 +22,7 @@
     <ProjectGuid>{41F81E2B-982C-4E88-850B-9C6D663ED93D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>LanguageAnalyser</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -139,6 +139,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TextInterpreter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TextInterpreter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
