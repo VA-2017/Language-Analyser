@@ -4,7 +4,7 @@ LanguageAnalyser::LanguageAnalyser() : TextPath(TextPathExtractor(Path))
 {
     auto FilePaths = TextPath.GetAllFilesPaths();
     FileReader->ReadAllTextFiles(FilePaths);
-    Textinterpreter;
+    Textinterpreter->InterpretText(FileReader->FullFiles);
 }
 
 LanguageAnalyser::~LanguageAnalyser()

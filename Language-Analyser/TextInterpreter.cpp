@@ -5,61 +5,52 @@ void TextInterpreter::InterpretText(std::vector<string> FileTexts)
     for (auto& filetext : FileTexts) {
         Text = filetext;
         CountAllLetters();
-        DeleteAllNonProcessedLetters();
+
     }
 }
 
-void TextInterpreter::DeleteAllNonProcessedLetters()
-{
 
-    std::invalid_argument("Nicht verarbeitbare Zeichen im Text.");
-
-}
-
-bool TextInterpreter::CountAllCTRLATLKeys()
+bool TextInterpreter::IsCTRLALTLetter(string& Letter)
 {
     std::exception("Nicht Implementiert");
     return false;
 }
 
-bool TextInterpreter::CountAllShiftKeys()
+bool TextInterpreter::IsShiftLetter(string& Letter)
 {
     std::exception("Nicht Implementiert");
     return false;
 }
 
-bool TextInterpreter::CountNormalLetters()
+bool TextInterpreter::IsNormalLetter(string& Letter)
 {
     return false;
 }
 
-bool TextInterpreter::ExtractAllNumbers()
-{
-    return false;
-}
-
-bool TextInterpreter::CompareLetter(std::vector<Letter> CurrentComparable)
-{
-    for (size_t i = 0; i < CurrentComparable.size(); i++) {
-        if (*CurrentComparable.at(i).specificLetter.c_str() == (Text.at(LetterCount))) {
-            CurrentComparable.at(i).Count++;
-        }
-    }
-    return false;
-}
 
 void TextInterpreter::CountAllLetters()
 {
-    for (size_t i = 0; i < Text.size(); i++) {
-        if (CountAllCTRLATLKeys()) {
+    for (auto i : Text) {
+        string letter(&i);
+        if (IsNumber(letter)) {
             continue;
         }
-        if (CountAllShiftKeys()) {
+        if (IsCTRLALTLetter(letter)) {
             continue;
         }
-        if (CountNormalLetters()) {
+        if (IsShiftLetter(letter)) {
+            continue;
+        }
+        if (IsNormalLetter(letter)) {
 
         }
-        DeleteAllNonProcessedLetters();
     }
+}
+
+bool TextInterpreter::IsNumber(string& Letter)
+{
+    if (Letter.find_first_of("0123456789") == Letter.npos) {
+        return true;
+    }
+    return false;
 }
