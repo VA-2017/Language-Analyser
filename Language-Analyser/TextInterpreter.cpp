@@ -3,27 +3,40 @@
 void TextInterpreter::InterpretText(std::vector<string> FileTexts)
 {
     for (auto& filetext : FileTexts) {
+        LetterCount + filetext.size();
         Text = filetext;
         CountAllLetters();
-
     }
+}
+
+unsigned long TextInterpreter::GetLetterCount()
+{
+    return LetterCount;
 }
 
 
 bool TextInterpreter::IsCTRLALTLetter(string& Letter)
 {
-    std::exception("Nicht Implementiert");
-    return false;
+    string find = "@#¬|¢´[]}{";
+    if (Letter.find_first_of(find) == Letter.npos) {
+        return true;
+    }
 }
 
 bool TextInterpreter::IsShiftLetter(string& Letter)
 {
-    std::exception("Nicht Implementiert");
+    string find = "§'^ü¨öä$-.,°+*ç%&/()=?`è!£àé_:;" + '"';
+    if (Letter.find_first_of(find) == Letter.npos) {
+        return true;
+    }
     return false;
 }
 
 bool TextInterpreter::IsNormalLetter(string& Letter)
 {
+    if (Letter.find_first_of("abcdefghijklmnopqrstuvwxyzöäü") == Letter.npos) {
+        return true;
+    }
     return false;
 }
 
