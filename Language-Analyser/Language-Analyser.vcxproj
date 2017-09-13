@@ -138,11 +138,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LanguageAnalyser.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TextFileReader.cpp" />
     <ClCompile Include="TextInterpreter.cpp" />
+    <ClCompile Include="TextPathExtractor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LanguageAnalyser.h" />
+    <ClInclude Include="TextFileReader.h" />
     <ClInclude Include="TextInterpreter.h" />
+    <ClInclude Include="TextPathExtractor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

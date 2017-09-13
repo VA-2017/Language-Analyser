@@ -12,8 +12,7 @@ struct Letter {
 
 class TextInterpreter {
 public:
-    TextInterpreter(string ImportText);
-
+    void InterpretText(std::vector<string>FileTexts);
 private:
     void DeleteAllNonProcessedLetters();
     void CountAllLetters();

@@ -1,5 +1,8 @@
 #include <iostream>
-
-void main() {
+#include "TextPathExtractor.h"
+#include "LanguageAnalyser.h"
+void main()
+{
+    LanguageAnalyser();
 
 }

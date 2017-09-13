@@ -1,10 +1,12 @@
 #include "TextInterpreter.h"
 
-TextInterpreter::TextInterpreter(std::string ImportText)
+void TextInterpreter::InterpretText(std::vector<string> FileTexts)
 {
-    Text = ImportText;
-    CountAllLetters();
-    DeleteAllNonProcessedLetters();
+    for (auto& filetext : FileTexts) {
+        Text = filetext;
+        CountAllLetters();
+        DeleteAllNonProcessedLetters();
+    }
 }
 
 void TextInterpreter::DeleteAllNonProcessedLetters()
