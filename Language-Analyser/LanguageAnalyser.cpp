@@ -1,10 +1,11 @@
 #include "LanguageAnalyser.h"
-static std::string Path = "C:/Users/Lukas Hunziker/Desktop/IT-KleinProjekt/Initialisierung";
+static std::string Path = "C:/github/VA-2017/wiki_download/articles";
 LanguageAnalyser::LanguageAnalyser() : TextPath(TextPathExtractor(Path))
 {
     auto FilePaths = TextPath.GetAllFilesPaths();
-    FileReader->ReadAllTextFiles(FilePaths);
-    Textinterpreter->InterpretText(FileReader->FullFiles);
+    auto t = FileReader->ReadAllTextFiles(FilePaths);
+    Textinterpreter->InterpretText(t);
+    Textinterpreter->WriteLetterCountToFile();
 }
 
 LanguageAnalyser::~LanguageAnalyser()

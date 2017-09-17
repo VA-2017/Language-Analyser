@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DataWriter.cpp" />
     <ClCompile Include="LanguageAnalyser.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TextFileReader.cpp" />
@@ -145,6 +146,7 @@
     <ClCompile Include="TextPathExtractor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DataWriter.h" />
     <ClInclude Include="LanguageAnalyser.h" />
     <ClInclude Include="TextFileReader.h" />
     <ClInclude Include="TextInterpreter.h" />

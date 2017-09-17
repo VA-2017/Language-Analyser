@@ -14,6 +14,7 @@ private:
     TextPathExtractor& TextPath;
     std::unique_ptr<TextFileReader> FileReader;
     std::unique_ptr<TextInterpreter> Textinterpreter;
+
 };
 
 

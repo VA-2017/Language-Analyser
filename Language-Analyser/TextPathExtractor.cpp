@@ -3,7 +3,7 @@ namespace fs = std::experimental::filesystem;
 
 TextPathExtractor::TextPathExtractor(string& Directory)
 {
-    DirectoryPath = "C:/github/VA-2017/Save-Random-Wikipedia-Article/articles";
+    DirectoryPath = "C:/github/VA-2017/wiki_download/articles";
     ExtractAllFilePaths();
 
 }

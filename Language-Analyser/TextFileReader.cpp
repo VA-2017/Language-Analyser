@@ -1,8 +1,9 @@
 #include "TextFileReader.h"
 using namespace std;
 
-void TextFileReader::ReadAllTextFiles(std::vector<std::string> FilePaths)
+std::vector<std::string> TextFileReader::ReadAllTextFiles(std::vector<std::string> FilePaths)
 {
+    std::vector<std::string> FullFiles;
     for (auto& i : FilePaths) {
         string line;
         string FullFile;
@@ -14,4 +15,5 @@ void TextFileReader::ReadAllTextFiles(std::vector<std::string> FilePaths)
         }
         FullFiles.push_back(FullFile);
     }
+    return FullFiles;
 }
