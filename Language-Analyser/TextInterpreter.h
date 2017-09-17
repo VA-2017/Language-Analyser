@@ -12,10 +12,9 @@ struct Letter {
 
 class TextInterpreter {
 public:
-    void InterpretText(std::vector<string>FileTexts);
-    void WriteLetterCountToFile();
+    map<string, int> InterpretText(std::vector<string>FileTexts);
 private:
-    void CountAllLetters(string& Text);
+    void CountAllLetters(string& Text, map<string, int>& LettersMap);
     bool IsNumber(string& Letter);
     bool IsCTRLALTLetter(string& Letter);
     bool IsShiftLetter(string& Letter);
@@ -24,6 +23,6 @@ public:
 
 private:
     unsigned long LetterCount = 0;
-    map<string, int> LettersMap;
+
 };
 
