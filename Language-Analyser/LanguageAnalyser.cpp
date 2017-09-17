@@ -4,8 +4,8 @@ LanguageAnalyser::LanguageAnalyser() : TextPath(TextPathExtractor(Path))
 {
     auto FilePaths = TextPath.GetAllFilesPaths();
     auto t = FileReader->ReadAllTextFiles(FilePaths);
-    Textinterpreter->InterpretText(t);
-    //TODO write csv file
+    auto LetterCountMap = Textinterpreter->InterpretText(t);
+    DataWriter->WriteCSVFile(LetterCountMap);
 }
 
 LanguageAnalyser::~LanguageAnalyser()

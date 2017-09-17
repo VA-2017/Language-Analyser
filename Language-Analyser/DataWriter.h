@@ -1,12 +1,11 @@
 #pragma once
-#pragma once
 #include <iostream>
 #include <vector>
-
+#include <map>
+using namespace std;
 class DataWriter {
 public:
-    DataWriter();
-    ~DataWriter();
+    void WriteCSVFile(map<string, int>& LetterMap);
 
 private:
 

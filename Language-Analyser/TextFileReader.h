@@ -8,7 +8,6 @@
 class TextFileReader {
 public:
     std::vector<std::string> ReadAllTextFiles(std::vector<std::string> FilePaths);
-    //std::vector<std::string> FullFiles;
 private:
 
 };

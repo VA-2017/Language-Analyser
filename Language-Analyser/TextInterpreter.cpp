@@ -70,6 +70,7 @@ void TextInterpreter::CountAllLetters(string& Text, map<string, int>& LettersMap
             LettersMap[letter]++;
             continue;
         }
+        std::invalid_argument("Unbekanntes Zeichen gefunden");
     }
 }
 
