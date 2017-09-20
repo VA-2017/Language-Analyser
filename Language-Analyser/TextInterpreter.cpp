@@ -13,6 +13,17 @@ map<string, int> TextInterpreter::InterpretText(std::vector<string> FileTexts)
     return LettersMap;
 }
 
+map<string, std::map<string, int>> TextInterpreter::CountLettersCombinations(std::vector<string> FileTexts)
+{
+    map<string, std::map<string, int>> LetterCombinationmap;
+    for (auto& filetext : FileTexts) {
+        std::transform(filetext.begin(), filetext.end(), filetext.begin(), ::tolower);
+        CountLetterCombinations(filetext, LetterCombinationmap);
+    }
+    return LetterCombinationmap;
+
+}
+
 bool TextInterpreter::IsNumber(string& Letter)
 {
     if (Letter.find_first_of("0123456789") != Letter.npos) {
@@ -72,5 +83,21 @@ void TextInterpreter::CountAllLetters(string& Text, map<string, int>& LettersMap
         }
         std::invalid_argument("Unbekanntes Zeichen gefunden");
     }
+}
+
+void TextInterpreter::CountLetterCombinations(string& Text, map<string, std::map<string, int>>& LetterCombinationmap)
+{
+    string Lastletter;
+    for (auto i : Text) {
+        string Letter(&i);
+        Letter.erase(1);
+        if (Lastletter.empty() || Letter.empty()) {
+            Lastletter = Letter;
+            continue;
+        }
+        LetterCombinationmap[Lastletter][Letter]++;
+        Lastletter = Letter;
+    }
+
 }
 

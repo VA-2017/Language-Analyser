@@ -2,9 +2,8 @@
 #include <fstream>
 
 
-void DataWriter::WriteCSVFile(map<string, int>& LetterMap)
+void DataWriter::WriteLetterCountCSVFile(map<string, int>& LetterMap)
 {
-
     ofstream myfile("LetterCount.csv");
     if (myfile.is_open()) {
         for (auto& Letter : LetterMap) {
@@ -15,4 +14,22 @@ void DataWriter::WriteCSVFile(map<string, int>& LetterMap)
         }
         myfile.close();
     }
+}
+
+void DataWriter::WriteLetterCombinationsCSVFile(map<string, std::map<string, int>>& LetterCombinationmap)
+{
+    ofstream myfile("WriteLetterCombinations.csv");
+    if (myfile.is_open()) {
+        for (auto& Letter : LetterCombinationmap) {
+            for (auto& Nextletter : Letter.second) {
+                myfile << Letter.first.c_str();
+                myfile << ",";
+                myfile << Nextletter.first.c_str();
+                myfile << ",";
+                myfile << Nextletter.second;
+                myfile << ";\n";
+            }
+        }
+    }
+    myfile.close();
 }

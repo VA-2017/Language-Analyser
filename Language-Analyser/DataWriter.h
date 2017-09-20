@@ -5,8 +5,8 @@
 using namespace std;
 class DataWriter {
 public:
-    void WriteCSVFile(map<string, int>& LetterMap);
-
+    void WriteLetterCountCSVFile(map<string, int>& LetterMap);
+    void WriteLetterCombinationsCSVFile(map<string, std::map<string, int>>& LetterCombinationmap);
 private:
 
 };
