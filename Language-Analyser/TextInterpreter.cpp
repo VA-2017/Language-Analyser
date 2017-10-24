@@ -66,15 +66,15 @@ void TextInterpreter::CountAllLetters(string& Text, map<string, int>& LettersMap
         string letter(&i);
         letter.erase(1);
         if (IsNumber(letter)) {
-            LettersMap[letter]++;
+            LettersMap[letter];
             continue;
         }
         if (IsCTRLALTLetter(letter)) {
-            LettersMap[letter]++;
+            LettersMap[letter];
             continue;
         }
         if (IsShiftLetter(letter)) {
-            LettersMap[letter]++;
+            LettersMap[letter];
             continue;
         }
         if (IsNormalLetter(letter)) {
