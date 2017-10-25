@@ -35,7 +35,7 @@ bool TextInterpreter::IsNumber(string& Letter)
 
 bool TextInterpreter::IsCTRLALTLetter(string& Letter)
 {
-    string find = "@#¬|¢´[]}{";
+    string find = "@#Â¬|Â¢Â´[]}{";
     if (Letter.find_first_of(find) != Letter.npos) {
         return true;
     }
@@ -44,7 +44,7 @@ bool TextInterpreter::IsCTRLALTLetter(string& Letter)
 
 bool TextInterpreter::IsShiftLetter(string& Letter)
 {
-    string find = "§'^ü¨öä$-.,°+*ç%&/()=?`è!£àé_:;" + '"';
+    string find = "Â§'^Ã¼Â¨Ã¶Ã¤$-.,Â°+*Ã§%&/()=?`Ã¨!Â£Ã Ã©_:;" + '"';
     if (Letter.find_first_of(find) != Letter.npos) {
         return true;
     }
@@ -53,7 +53,7 @@ bool TextInterpreter::IsShiftLetter(string& Letter)
 
 bool TextInterpreter::IsNormalLetter(string& Letter)
 {
-    if (Letter.find_first_of("abcdefghijklmnopqrstuvwxyzöäü") != Letter.npos) {
+    if (Letter.find_first_of("abcdefghijklmnopqrstuvwxyzÃ¶Ã¤Ã¼") != Letter.npos) {
         return true;
     }
     return false;
