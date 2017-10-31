@@ -13,6 +13,18 @@ map<string, int> TextInterpreter::InterpretText(std::vector<string> FileTexts)
     return LettersMap;
 }
 
+map<string, map<string, std::map<string, int>>> TextInterpreter::CountLettersTriples(std::vector<string>FileTexts)
+{
+    map<string, map<string, std::map<string, int>>> LetterTriples;
+    for (auto& filetext : FileTexts) {
+        std::transform(filetext.begin(), filetext.end(), filetext.begin(), ::tolower);
+        CountLetterTriples(filetext, LetterTriples);
+    }
+    return LetterTriples;
+
+}
+
+
 map<string, std::map<string, int>> TextInterpreter::CountLettersCombinations(std::vector<string> FileTexts)
 {
     map<string, std::map<string, int>> LetterCombinationmap;
@@ -96,6 +108,26 @@ void TextInterpreter::CountLetterCombinations(string& Text, map<string, std::map
             continue;
         }
         LetterCombinationmap[Lastletter][Letter]++;
+        Lastletter = Letter;
+    }
+
+}
+
+
+void TextInterpreter::CountLetterTriples(string& Text, map<string, map<string, std::map<string, int>>>& LetterCombinationmap)
+{
+    string Lastletter;
+    string PreviousLastLetter;
+    for (auto i : Text) {
+        string Letter(&i);
+        Letter.erase(1);
+
+        if (PreviousLastLetter.empty() || Lastletter.empty() || Letter.empty()) {
+            PreviousLastLetter = Lastletter;
+            Lastletter = Letter;
+            continue;
+        }
+        LetterCombinationmap[PreviousLastLetter][Lastletter][Letter]++;
         Lastletter = Letter;
     }
 
