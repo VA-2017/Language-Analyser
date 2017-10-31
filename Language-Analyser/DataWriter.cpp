@@ -33,3 +33,27 @@ void DataWriter::WriteLetterCombinationsCSVFile(map<string, std::map<string, int
     }
     myfile.close();
 }
+
+void DataWriter::TripleWriteLetterCombinationsCSVFile(map<string, map<string, std::map<string, int>>>& LetterCombinationmap)
+{
+    ofstream myfile("WriteTripleLetterCombinations.csv");
+    if (myfile.is_open()) {
+        for (auto& Letter : LetterCombinationmap) {
+            for (auto& Nextletter : Letter.second) {
+                for (auto& NextNextletter : Nextletter.second) {
+
+
+                    myfile << Letter.first.c_str();
+                    myfile << ",";
+                    myfile << Nextletter.first.c_str();
+                    myfile << ",";
+                    myfile << NextNextletter.first.c_str();
+                    myfile << ",";
+                    myfile << NextNextletter.second;
+                    myfile << ";\n";
+                }
+            }
+        }
+    }
+    myfile.close();
+}
