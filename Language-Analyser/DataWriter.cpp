@@ -41,8 +41,6 @@ void DataWriter::TripleWriteLetterCombinationsCSVFile(map<string, map<string, st
         for (auto& Letter : LetterCombinationmap) {
             for (auto& Nextletter : Letter.second) {
                 for (auto& NextNextletter : Nextletter.second) {
-
-
                     myfile << Letter.first.c_str();
                     myfile << ",";
                     myfile << Nextletter.first.c_str();
